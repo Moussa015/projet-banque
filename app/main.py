@@ -41,3 +41,5 @@ print("\n=== Resume des clients enregistres ===")
 
 for client in client_list:
     client.show_balance()
+    client._register_transaction("Ouverture de compte", client.balance)
+    print(f"Type de compte : {client.type_account}")

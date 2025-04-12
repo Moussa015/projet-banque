@@ -52,6 +52,7 @@ class Client(Banque):
 
     #methode pour enregistrer les transactions sur le fichier rapport.txt
     def _register_transaction(self, type_transaction, amount):
-        now= datetime.now()
+        now= datetime.datetime.now()
+        # Créer le fichier s'il n'existe pas
         with open("rapport.txt", "a") as f:
             f.write(f"{self.name} {self.firstname} - {type_transaction} de {amount} FCFA le {now.strftime('%d-%m-%Y %H:%M:%S')}\n")
